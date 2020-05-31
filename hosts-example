@@ -24,14 +24,18 @@
 192.168.8.11      sdfsdf.test
 192.168.8.11      sdfbvcbc.test
 
-# WSL Hosts Begin
-172.28.139.202                 wp.test
-172.28.139.202                 sdfsfdfsd.test
-172.28.139.202                 fdsfsdwp.test
-172.28.139.202                 sdfsdf.test
-172.28.139.202                 sdfbvcbc.test
-# WSL Hosts End
+172.28.140.181                                         wp.test
+172.28.140.181                                         sdfsfdfsd.test
+172.28.140.181                                         fdsfsdwp.test
+172.28.140.181                                         sdfsdf.test
+172.28.140.181                                         sdfbvcbc.test
 
 192.168.8.11      fdsfsdwp.test
 192.168.8.11      sdfsdf.test
 192.168.8.11      sdfbvcbc.test
+172.28.140.181   	bsfkbsdksdf.test
+172.28.130.67 	fsdfsdsfd.dev
+172.28.130.67 	hvdhbdsf.test
+172.28.140.181  	test.dev
+172.28.141.224 	fdssdfsdf.test
+172.28.129.54 	jndfsjsfd.dev

@@ -1,4 +1,6 @@
 {
   "firstRun": 0,
-  "windowsOn": "C"
+  "hostsPath": "hosts-example",
+  "lastKnownIP": "172.28.140.181",
+  "htdocsRoot": ""
 }
