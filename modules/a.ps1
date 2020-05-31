@@ -20,3 +20,5 @@ Write-Host "`n>> ✅ Added new virtual host: $newHostLine" -f green
 
 # Restart WSL session
 .\modules\restart.ps1
+
+Write-Host ">> ✅ Done!`n" -f green
