@@ -75,8 +75,7 @@ if ($firstRun -eq 1) {
     Write-Host "-r  Rewrite all WSL IP's to new"
     Write-Host "-a  Add new virtual host"
     Write-Host "-p  Preview current Windows hosts file"
-    Write-Host "-i  Add new virtual host with choosen software installation (look at readme for details)"
-    Write-Host "-reset  Reconfigure this script"
+    Write-Host "-i  Add new virtual host with choosen software installation (look at readme for details) [WIP]"
     Write-Host "-hardreset  Reset config file to default variables"
     Write-Host "`n"
   }
