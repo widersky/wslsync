@@ -1,6 +1,9 @@
 {
   "firstRun": 1,
-  "hostsPath": "hosts-example",
+  "hostsPath": "",
   "lastKnownIP": "",
-  "htdocsRoot": "~/web/"
+  "htdocsRoot": "",
+  "extras": {
+    "usingXampp": 0
+  }
 }
