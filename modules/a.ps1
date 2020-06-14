@@ -3,7 +3,7 @@
 # Module: Add new virtual host
 # Flag: -a
 
-# Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 
 Write-Host ">> We're going to add new virtual host to your Windows / WSL hosts file. Do you want to continue?" -f green
 Read-Host "[Enter to continue / CTRL + C to abort]"

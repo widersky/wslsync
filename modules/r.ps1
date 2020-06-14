@@ -3,7 +3,7 @@
 # Module: Rewrite WSL IP's to fresh
 # Flag: -r
 
-# Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 
 Write-Host ">> We're going to change old WSL IP's to new. Do you want to continue?" -f green
 Read-Host "[Enter to continue / CTRL + C to abort]"

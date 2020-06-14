@@ -1,7 +1,7 @@
 # WSLSync v1.0.0
 # Author: Adrian Widerski
 
-# Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 
 Clear-Host
 
@@ -18,16 +18,23 @@ Write-Host "====================================================================
 
 # Check first run and update config file
 if ($firstRun -eq 1) {
+  $commonPath = "C:/Windows/System32/drivers/etc/hosts"
   $path = ":/Windows/System32/drivers/etc/hosts"
 
   Write-Host ">> 👀 Looks like this is first run of this script! Let's make some preparations then!`n" -f yellow
 
   # Get Windows installation partition letter
-  Write-Host ">> What's the letter of drive where is installed your Windows?" -f green
-  $windowsLetter = Read-Host "[Just type letter and hit Enter]"
-  $windowsLetter = $windowsLetter.toUpper()
-  $fullPath = "$windowsLetter$path"
-  Write-Host ">> 🧐 OK then! Looks like your hosts file is located under $fullPath"
+  Write-Host ">> Checking if hosts file is in the default location..." -f green
+  if (Test-Path "C:/Windows/System32/drivers/etc/hosts") {
+    Write-Host ">> ✅ Yup, it's there" -f green
+    $fullPath = $commonPath
+  } else {
+    Write-Host ">> Looks like your Windows installation path is customised. Specify the partition letter on which Windows is installed:" -f green
+    $windowsLetter = Read-Host "[Just type letter and hit Enter]"
+    $windowsLetter = $windowsLetter.toUpper()
+    $fullPath = "$windowsLetter$path"
+    Write-Host ">> 🧐 OK then! Looks like your hosts file is located under $fullPath"
+  }
 
   # Get WSL's htdocs root
   Write-Host "`n>> What's the htdocs root path on your WSL?" -f green
@@ -41,8 +48,9 @@ if ($firstRun -eq 1) {
   if (Test-Path $fullPath -PathType leaf) {
     $settings.firstRun = 0
     $settings.hostsPath = $fullPath -replace ' ', ''
-    $settings.lastKnownIP = $wslIP
+    $settings.lastKnownIP = $wslIP -replace ' ', ''
     $settings.htdocsRoot = $WSLhtdocs
+    $settings.extras.usingXampp = 0
     $settings | ConvertTo-Json -depth 32| Set-Content $scriptSettings
     Write-Host "`n>> ✅ Config created. Now you can re-run this script to work!`n" -f green
   } else {
@@ -54,18 +62,23 @@ if ($firstRun -eq 1) {
   if ($args.count -gt 0) {
     $action = $args[0]
   
-    # run action by flag (-r, -a, -i, -reset)
+    # run action by flag (-r, -a, -i, -reset...)
     switch ($action) {
       "-r" { .\modules\r.ps1; break }
       "-a" { .\modules\a.ps1; break }
+      "-p" { .\modules\p.ps1; break }
+      "-hardreset" { .\modules\hardreset.ps1; break }
     }
   } else {
     Write-Host "Use the flags below for your chosen purpose: `n"
   
     Write-Host "-r  Rewrite all WSL IP's to new"
     Write-Host "-a  Add new virtual host"
+    Write-Host "-p  Preview current Windows hosts file"
     Write-Host "-i  Add new virtual host with choosen software installation (look at readme for details)"
-    Write-Host "-reset  Reconfigure this script`n"
+    Write-Host "-reset  Reconfigure this script"
+    Write-Host "-hardreset  Reset config file to default variables"
+    Write-Host "`n"
   }
   
   exit
