@@ -5,10 +5,14 @@
 
 #Requires -RunAsAdministrator
 
+Write-Host ">> Would you like to restore config file to default values?" -f green
+Read-Host "[Enter to continue / CTRL + C to abort]"
+
 $settings.firstRun = 1
 $settings.hostsPath = ""
 $settings.lastKnownIP = ""
 $settings.htdocsRoot = ""
 $settings.extras.usingXampp = 0
 $settings | ConvertTo-Json -depth 32| Set-Content $scriptSettings
+
 Write-Host "`n>> ✅ Configuration restored to default values.`n" -f green
