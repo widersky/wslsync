@@ -1,6 +1,6 @@
 {
-  "firstRun": 0,
+  "firstRun": 1,
   "hostsPath": "hosts-example",
-  "lastKnownIP": "172.29.235.157 ",
+  "lastKnownIP": "",
   "htdocsRoot": "~/web/"
 }
