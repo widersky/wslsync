@@ -1,7 +1,7 @@
 # WSLSync v1.0.0
 # Author: Adrian Widerski
 
-# Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 
 Clear-Host
 
@@ -58,12 +58,14 @@ if ($firstRun -eq 1) {
     switch ($action) {
       "-r" { .\modules\r.ps1; break }
       "-a" { .\modules\a.ps1; break }
+      "-p" { .\modules\p.ps1; break }
     }
   } else {
     Write-Host "Use the flags below for your chosen purpose: `n"
   
     Write-Host "-r  Rewrite all WSL IP's to new"
     Write-Host "-a  Add new virtual host"
+    Write-Host "-p  Preview current Windows hosts file"
     Write-Host "-i  Add new virtual host with choosen software installation (look at readme for details)"
     Write-Host "-reset  Reconfigure this script`n"
   }
