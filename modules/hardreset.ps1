@@ -12,6 +12,7 @@ $settings.firstRun = 1
 $settings.hostsPath = ""
 $settings.lastKnownIP = ""
 $settings.htdocsRoot = ""
+$settings.localDomain = ".test"
 $settings.extras.usingXampp = 0
 $settings | ConvertTo-Json -depth 32| Set-Content $scriptSettings
 

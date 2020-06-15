@@ -38,7 +38,7 @@ if ($firstRun -eq 1) {
 
   # Get WSL's htdocs root
   Write-Host "`n>> What's the htdocs root path on your WSL?" -f green
-  $WSLhtdocs = Read-Host "[Type exact path, e.g. ~/Web/]"
+  $WSLhtdocs = Read-Host "[Type exact path, e.g. /opt/lampp/htdocs/web/]"
   Write-Host ">> 🧐 Good, your projects are located under $WSLhtdocs"
 
   # Generate config file
@@ -50,6 +50,7 @@ if ($firstRun -eq 1) {
     $settings.hostsPath = $fullPath -replace ' ', ''
     $settings.lastKnownIP = $wslIP -replace ' ', ''
     $settings.htdocsRoot = $WSLhtdocs
+    $settings.localDomain = ".test"
     $settings.extras.usingXampp = 0
     $settings | ConvertTo-Json -depth 32| Set-Content $scriptSettings
     Write-Host "`n>> ✅ Config created. Now you can re-run this script to work!`n" -f green
