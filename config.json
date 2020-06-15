@@ -1,10 +1,10 @@
 {
-  "firstRun": 0,
+  "firstRun": 1,
   "hostsPath": "hosts-example",
   "lastKnownIP": "",
   "htdocsRoot": "/opt/lampp/htdocs/web/",
   "localDomain": ".test",
   "extras": {
-    "usingXampp": 1
+    "usingXampp": 0
   }
 }

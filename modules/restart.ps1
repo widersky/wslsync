@@ -11,6 +11,5 @@ $runningDistro = (wsl --list --running -q | Out-String -NoNewLine).Trim() -repla
 # we don't use --shutdown flag because every shutdown makes new WSL IP.
 # TODO: make it possible to terminate more than one running distros
 wsl --terminate $runningDistro
-Write-Host "`n>> 💀 Detected running distro: $runningDistro, terminated to sync virtual hosts"
 wsl --distribution $runningDistro exit
-Write-Host ">> 🐧 Running previously terminated $runningDistro`n"
+Write-Host "`n>> 🐧 Detected running distro: $runningDistro, restarted to sync virtual hosts"
