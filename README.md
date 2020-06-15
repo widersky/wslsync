@@ -23,9 +23,9 @@ First script run initializes `config.json` generator. This file stores some help
 `firstRun` - `1` or `0` - indicates whether the script is launched for the first time\
 `hostsPath` - stores path to Windows hosts file\
 `lastKnownIP` - stores last known WSL IP address\
-`htdocsRoot` - stores htdocs root directory in WSL (currently does nothing)\
+`htdocsRoot` - stores htdocs root directory in WSL (currently does nothing)
 
-There is also an `extras` setting in this file storing variables like:\
+There is also an `extras` setting in this file storing variables like:
 
 `usingXampp` - Defines whether the XAMPP installation on the WSL side is used - helpful for generating automatic vhosts for Apache [WIP]
 
