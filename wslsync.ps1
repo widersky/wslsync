@@ -8,7 +8,7 @@ Clear-Host
 $scriptSettings = "config.json"
 $settings = Get-Content .\$scriptSettings | ConvertFrom-Json
 $firstRun = $settings.firstRun
-$v = "v1.0.0 Beta"
+$v = "v1.0.0 Beta 1"
 
 Write-Host "`n💻 WSLSync $v"
 Write-Host "📋 Author: widersky (https://github.com/widersky/)"
