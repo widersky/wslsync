@@ -1,10 +1,7 @@
 {
-  "firstRun": 1,
-  "hostsPath": "hosts-example",
-  "lastKnownIP": "",
-  "htdocsRoot": "/opt/lampp/htdocs/web/",
+  "lastKnownIP": "172.30.48.196",
+  "hostsPath": "C:/Windows/System32/drivers/etc/hosts",
+  "usingXampp": 1,
   "localDomain": ".test",
-  "extras": {
-    "usingXampp": 0
-  }
+  "htdocsRoot": "/opt/lampp/htdocs/web."
 }

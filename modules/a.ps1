@@ -19,7 +19,7 @@ Add-Content $settings.hostsPath $newVHostLine
 Write-Host "`n>> ✅ Added new virtual host: $newVHostLine$localDomain" -f green
 
 # Extra XAMPP support
-if ($settings.extras.usingXampp -eq 1) {
+if ($settings.usingXampp -eq 1) {
     $vHostsFile = "/opt/lampp/etc/extra/httpd-vhosts.conf"
     $vHostString = @"
 
