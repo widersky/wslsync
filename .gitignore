@@ -1,3 +1,5 @@
 /backups
+/releases
 hosts
 hosts-temp
+config.json
