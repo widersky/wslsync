@@ -11,15 +11,15 @@ Read-Host "[Enter to continue / CTRL + C to abort]"
 $newHost = Read-Host "[Enter new virtual host name]"
 $WSLIP = wsl hostname -I # get IP address from WSL distro
 
-$localDomain = $settings.localDomain
-$htDocsRoot = $settings.htdocsRoot
+$localDomain = $config.localDomain
+$htDocsRoot = $config.htdocsRoot
 $newVHost = $newHost + $localDomain
 $newVHostLine = "$WSLIP`t$newVHost"
-Add-Content $settings.hostsPath $newVHostLine
+Add-Content $config.hostsPath $newVHostLine
 Write-Host "`n>> ✅ Added new virtual host: $newVHostLine$localDomain" -f green
 
 # Extra XAMPP support
-if ($settings.usingXampp -eq 1) {
+if ($config.usingXampp -eq 1) {
     $vHostsFile = "/opt/lampp/etc/extra/httpd-vhosts.conf"
     $vHostString = @"
 
