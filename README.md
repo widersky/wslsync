@@ -14,7 +14,7 @@ The script backs up an existing `hosts` file, then searches its contents for old
 
 Run `wslsync.ps1` with admin rights
 
-💡 Running script without any flags prints short help message
+💡 Running WSLSync without any flags results in rewriting all hosts based on directory names in project folder defined in config file
 
 ## Available settings in config.json
 
@@ -22,7 +22,6 @@ First script run initializes `config.json` generator. This file stores some help
 
 `firstRun` - `1` or `0` - indicates whether the script is launched for the first time\
 `hostsPath` - stores path to Windows hosts file\
-`lastKnownIP` - stores last known WSL IP address\
 `htdocsRoot` - stores htdocs root directory in WSL (currently does nothing)
 
 There is also an `extras` setting in this file storing variables like:
@@ -31,8 +30,4 @@ There is also an `extras` setting in this file storing variables like:
 
 ### Available flags
 
-`-r` - Refresh IP addresses in Windows `hosts` file\
-`-a` - Add new virtual host\
 `-p` - Preview current Windows hosts file\
-`-i` - Add new virtual host with choosen software installation (look at readme for details) [WIP]\
-`-hardreset` - Reset config file to default variables
