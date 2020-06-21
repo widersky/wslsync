@@ -19,3 +19,15 @@
 # localhost name resolution is handled within DNS itself.
 #	127.0.0.1       localhost
 #	::1             localhost
+172.30.49.157 	test10.test
+172.30.49.157 	test3.test
+172.30.49.157 	test4.test
+172.30.49.157 	test6.test
+172.30.49.157 	test7.test
+172.30.49.157 	test8.test
+172.30.49.157 	test9.test
+# WSLSyncStart
+172.30.61.192 	oknaskandynawskie.test
+172.30.61.192 	sztukadegustacji.test
+172.30.61.192 	test.test
+# WSLSyncEnd
